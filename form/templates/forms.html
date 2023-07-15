@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Saved Forms</h1>
+
+<ul>
+    {% for form in forms %}
+    <li>
+        <a href="{% url 'form_detail' form.id %}">
+            <p><strong>{{ form }}</strong></p>
+            <strong>Sponsored: {{form.sponsored}}</strong>
+            <p> Sponsor: {{form.sponsor}}</p>
+            <p> Amount: {{form.amount}}</p>
+            <img src="{{ form.receipt.url }}" alt="Image">
+            <p>User: {{form.user.username}}</p>
+            
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

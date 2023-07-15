@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Create New Form</h1>
+
+{{ error }}
+
+<form action="/forms/create/" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ sponsorform.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

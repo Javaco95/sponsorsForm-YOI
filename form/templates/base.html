@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors Form YOI</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            {% if request.user.is_superuser %}
+            <li>
+                <a href="/forms">Saved Forms</a>
+            </li>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <li>
+                <a href="/forms/create">Create New Form</a>
+            </li>
+            <li>
+                <a href="/logout">Log Out</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/signup">Sign Up</a>
+            </li>
+            <li>
+                <a href="/signin">Sign In</a>
+            </li>
+            {% endif %}
+
+
+        </ul>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+
+
+</body>
+</html>
