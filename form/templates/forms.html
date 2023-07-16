@@ -16,7 +16,7 @@
             <h2><strong>{{ form }}</strong></h2>
             <p>Sponsored: {{form.sponsored}}</p>
             <p> Sponsor: {{form.sponsor}}</p>
-            <p> Amount: {{form.amount}}</p>
+            <p> Amount: ${{form.amount}} </p>
             <img src="{{ form.receipt.url }}" alt="Image">
             <p>User: {{form.user.username}}</p>
     {% endfor %}

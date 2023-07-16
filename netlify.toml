@@ -1,0 +1,4 @@
+toml
+[build]
+  command = "python manage.py collectstatic --noinput"
+  publish = "path/to/static/files"

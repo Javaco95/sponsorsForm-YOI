@@ -10,4 +10,4 @@ class Form(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.sponsored + ' was sponsored by ' + self.sponsor + ' for the amount of ' + str(self.amount)
+        return self.sponsored + ' was sponsored by ' + self.sponsor + ' for the amount of $' + str(self.amount) 
