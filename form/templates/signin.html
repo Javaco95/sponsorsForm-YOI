@@ -2,6 +2,8 @@
 
 
 {% block content %}
+
+<div class="signinup-content">
 <h1>Sign In</h1>
 
 {{error}}
@@ -9,7 +11,11 @@
 <form action="/signin/" method="POST">
     {% csrf_token %}
     {{form.as_p}}
+    <div class="button-container">
     <button>Sign In</button>
+    </div>
 
 </form>
+
+</div>
 {% endblock %}

@@ -1,12 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'logo.jpeg' %}" type="image/x-icon">
     <title>Sponsors Form YOI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
 </head>
 <body>
-    <nav>
+    <nav class="navbar container">
         <ul>
             <li>
                 <a href="/">Home</a>
@@ -35,10 +41,15 @@
 
         </ul>
     </nav>
+
+    <main class="container">
     {% block content %}
-
     {% endblock %}
-
+    </main>
+    
+    <footer class="footer">
+        <img src="{% static 'logo.jpeg' %}" alt="">
+    </footer>
 
 </body>
 </html>

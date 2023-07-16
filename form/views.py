@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate
 from .models import Form
 from .forms import SponsorForm
 from django.contrib.auth.decorators import user_passes_test
-
+from django.http import HttpResponse
+import csv
 
 # Create your views here.
 
@@ -105,4 +106,20 @@ def create_form(request):
                 'error': 'Please provide valid data'
             })
 
+@user_passes_test(lambda u: u.is_superuser)
+def export_csv(request):
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="forms.csv"'
+
+    # Aquí debes obtener los datos de los formularios que deseas exportar
+    # Puedes modificar la consulta según tus necesidades
+    forms = Form.objects.all()
+
+    writer = csv.writer(response)
+    writer.writerow(['Sponsored', 'Sponsor', 'Amount', 'User'])
+
+    for form in forms:
+        writer.writerow([form.sponsored, form.sponsor, form.amount, form.user.username])
+
+    return response
 

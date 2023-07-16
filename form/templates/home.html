@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 
 {% block content %}
+<div class="home-content">
 <h1>Sponsors form YOI</h1>
-<p>In this site you should register your sponsors</p>
-<p>Follow the below instructions</p>
+<p>In this site you should register your sponsors...</p>
+<p>Follow the below instructions:</p>
+<img src="{% static 'instructions.gif' %}" alt="">
+
+</div>
 {% endblock %}

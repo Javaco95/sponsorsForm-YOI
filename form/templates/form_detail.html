@@ -3,15 +3,13 @@
 
 
 {% block content %}
+<div class="forms-content">
 <h1>{{form.sponsored}}</h1>
 
 <form method="POST">
 
 {% csrf_token %}
 {{form.as_p}}
-<button>
-    Update
-</button>
 </form>
-
+</div>
 {% endblock %}
